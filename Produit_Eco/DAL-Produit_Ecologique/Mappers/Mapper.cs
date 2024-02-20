@@ -14,10 +14,10 @@ namespace DAL_Produit_Ecologique.Mappers
             return new Produit()
             {
                 Id_Produit = (int)record["Id_Produit"],
-                Nom = (string)record["Name"],
-                Description = (string)record["City"],
-                Prix = (string)record["Street"],
-                Nombre_vente = (string)record["Number"],
+                Nom = (string)record["Nom"],
+                Description = (string)record["Description"],
+                Prix = (decimal)record["Prix"],
+                Nombre_vente = (int)record["Nombre_vente"],
                 EcoScore = (string)record["EcoScore"],
                 Categorie = (string)record["Categorie"],
 

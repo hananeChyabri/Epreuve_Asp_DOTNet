@@ -1,0 +1,13 @@
+C:\REPOSITORIES\Epreuve_Asp_DOTNet\Produit_Eco\DAL-Produit_Ecologique\obj\Debug\netstandard2.0\DAL-Produit_Ecologique.csproj.AssemblyReference.cache
+C:\REPOSITORIES\Epreuve_Asp_DOTNet\Produit_Eco\DAL-Produit_Ecologique\obj\Debug\netstandard2.0\DAL-Produit_Ecologique.GeneratedMSBuildEditorConfig.editorconfig
+C:\REPOSITORIES\Epreuve_Asp_DOTNet\Produit_Eco\DAL-Produit_Ecologique\obj\Debug\netstandard2.0\DAL-Produit_Ecologique.AssemblyInfoInputs.cache
+C:\REPOSITORIES\Epreuve_Asp_DOTNet\Produit_Eco\DAL-Produit_Ecologique\obj\Debug\netstandard2.0\DAL-Produit_Ecologique.AssemblyInfo.cs
+C:\REPOSITORIES\Epreuve_Asp_DOTNet\Produit_Eco\DAL-Produit_Ecologique\obj\Debug\netstandard2.0\DAL-Produit_Ecologique.csproj.CoreCompileInputs.cache
+C:\REPOSITORIES\Epreuve_Asp_DOTNet\Produit_Eco\DAL-Produit_Ecologique\bin\Debug\netstandard2.0\DAL-Produit_Ecologique.deps.json
+C:\REPOSITORIES\Epreuve_Asp_DOTNet\Produit_Eco\DAL-Produit_Ecologique\bin\Debug\netstandard2.0\DAL-Produit_Ecologique.dll
+C:\REPOSITORIES\Epreuve_Asp_DOTNet\Produit_Eco\DAL-Produit_Ecologique\bin\Debug\netstandard2.0\DAL-Produit_Ecologique.pdb
+C:\REPOSITORIES\Epreuve_Asp_DOTNet\Produit_Eco\DAL-Produit_Ecologique\bin\Debug\netstandard2.0\Shared-Produit_Ecologique.dll
+C:\REPOSITORIES\Epreuve_Asp_DOTNet\Produit_Eco\DAL-Produit_Ecologique\bin\Debug\netstandard2.0\Shared-Produit_Ecologique.pdb
+C:\REPOSITORIES\Epreuve_Asp_DOTNet\Produit_Eco\DAL-Produit_Ecologique\obj\Debug\netstandard2.0\DAL-Produit_Ecologique.csproj.CopyComplete
+C:\REPOSITORIES\Epreuve_Asp_DOTNet\Produit_Eco\DAL-Produit_Ecologique\obj\Debug\netstandard2.0\DAL-Produit_Ecologique.dll
+C:\REPOSITORIES\Epreuve_Asp_DOTNet\Produit_Eco\DAL-Produit_Ecologique\obj\Debug\netstandard2.0\DAL-Produit_Ecologique.pdb

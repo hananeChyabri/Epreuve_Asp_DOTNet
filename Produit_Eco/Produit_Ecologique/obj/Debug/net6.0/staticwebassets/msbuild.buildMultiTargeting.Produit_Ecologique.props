@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Produit_Ecologique.props" />
+</Project>

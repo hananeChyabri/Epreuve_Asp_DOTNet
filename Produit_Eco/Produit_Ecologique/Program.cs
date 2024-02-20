@@ -1,3 +1,7 @@
+using Shared_Produit_Ecologique.Repositories;
+using BLL = BLL_Produit_Ecologique;
+using DAL = DAL_Produit_Ecologique;
+
 namespace Produit_Ecologique
 {
     public class Program
@@ -8,6 +12,8 @@ namespace Produit_Ecologique
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<IProduitRepository<BLL.Entities.Produit>, BLL.Services.ProduitService>();
+            builder.Services.AddScoped<IProduitRepository<DAL.Entities.Produit>, DAL.Services.ProduitService>();
 
             var app = builder.Build();
 

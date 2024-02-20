@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BLL_Produit_Ecologique\BLL_Produit_Ecologique.csproj" />
     <ProjectReference Include="..\DAL-Produit_Ecologique\DAL-Produit_Ecologique.csproj" />
     <ProjectReference Include="..\Shared-Produit_Ecologique\Shared-Produit_Ecologique.csproj" />

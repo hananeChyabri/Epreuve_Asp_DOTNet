@@ -1,4 +1,5 @@
 ﻿using DAL_Produit_Ecologique.Entities;
+using DAL_Produit_Ecologique.Mappers;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using Shared_Produit_Ecologique.Repositories;
@@ -25,7 +26,7 @@ namespace DAL_Produit_Ecologique.Services
             {
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "SP_Produit_GetPlusPopulaire";
+                    command.CommandText = "SP_Produit_GetPlusPopulaires";
                     command.CommandType = CommandType.StoredProcedure;
                     connection.Open();
                     using (SqlDataReader reader = command.ExecuteReader())

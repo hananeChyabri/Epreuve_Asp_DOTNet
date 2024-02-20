@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Entities\" />
+    <Folder Include="Mappers\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DAL-Produit_Ecologique\DAL-Produit_Ecologique.csproj" />
+    <ProjectReference Include="..\Shared-Produit_Ecologique\Shared-Produit_Ecologique.csproj" />
+  </ItemGroup>
+
+</Project>

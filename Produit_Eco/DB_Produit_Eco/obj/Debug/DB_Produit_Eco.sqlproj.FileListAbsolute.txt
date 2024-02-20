@@ -1,0 +1,6 @@
+C:\REPOSITORIES\Epreuve_Asp_DOTNet\Produit_Eco\DB_Produit_Eco\bin\Debug\DB_Produit_Eco.dacpac
+C:\REPOSITORIES\Epreuve_Asp_DOTNet\Produit_Eco\DB_Produit_Eco\bin\Debug\DB_Produit_Eco.dll
+C:\REPOSITORIES\Epreuve_Asp_DOTNet\Produit_Eco\DB_Produit_Eco\bin\Debug\DB_Produit_Eco.pdb
+C:\REPOSITORIES\Epreuve_Asp_DOTNet\Produit_Eco\DB_Produit_Eco\obj\Debug\DB_Produit_Eco.sqlproj.AssemblyReference.cache
+C:\REPOSITORIES\Epreuve_Asp_DOTNet\Produit_Eco\DB_Produit_Eco\obj\Debug\DB_Produit_Eco.dll
+C:\REPOSITORIES\Epreuve_Asp_DOTNet\Produit_Eco\DB_Produit_Eco\obj\Debug\DB_Produit_Eco.pdb

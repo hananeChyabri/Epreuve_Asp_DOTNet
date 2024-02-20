@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "oJijkV3tZu/nKr3pNDGF/No7ZvR+/vnGMYUZE9O0yU+caFm5YptpDNSA0rscBdPyjPY1dXOQo9IP/TKsP7qdGA==",
+  "success": true,
+  "projectFilePath": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Shared-Produit_Ecologique\\Shared-Produit_Ecologique.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\h.chyabri\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\h.chyabri\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

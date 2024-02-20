@@ -5,6 +5,20 @@ VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DB_Produit_Eco", "DB_Produit_Eco\DB_Produit_Eco.sqlproj", "{7320E97E-4D66-4869-98E3-E946754327D9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Asp", "Asp", "{D93C0347-F2C4-4D5C-B4E9-0C5F6F14A2F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BLL", "BLL", "{1E44D430-72A8-4A4A-9E92-656C02085F51}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{D632AAED-ABDB-4DE8-8BF9-5EA30BF3372F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Produit_Ecologique", "Produit_Ecologique\Produit_Ecologique.csproj", "{9D579F4C-F1A6-464A-A0D9-BB462E338CE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL_Produit_Ecologique", "BLL_Produit_Ecologique\BLL_Produit_Ecologique.csproj", "{09295303-5041-44BA-B7ED-470590BE3148}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL-Produit_Ecologique", "DAL-Produit_Ecologique\DAL-Produit_Ecologique.csproj", "{FC572014-24EF-4277-A1B3-C2500544CAF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared-Produit_Ecologique", "Shared-Produit_Ecologique\Shared-Produit_Ecologique.csproj", "{877EF533-A9FA-493A-8E21-946F3BDF7754}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,9 +31,30 @@ Global
 		{7320E97E-4D66-4869-98E3-E946754327D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7320E97E-4D66-4869-98E3-E946754327D9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7320E97E-4D66-4869-98E3-E946754327D9}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{9D579F4C-F1A6-464A-A0D9-BB462E338CE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D579F4C-F1A6-464A-A0D9-BB462E338CE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D579F4C-F1A6-464A-A0D9-BB462E338CE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D579F4C-F1A6-464A-A0D9-BB462E338CE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09295303-5041-44BA-B7ED-470590BE3148}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09295303-5041-44BA-B7ED-470590BE3148}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09295303-5041-44BA-B7ED-470590BE3148}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09295303-5041-44BA-B7ED-470590BE3148}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC572014-24EF-4277-A1B3-C2500544CAF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC572014-24EF-4277-A1B3-C2500544CAF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC572014-24EF-4277-A1B3-C2500544CAF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC572014-24EF-4277-A1B3-C2500544CAF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{877EF533-A9FA-493A-8E21-946F3BDF7754}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{877EF533-A9FA-493A-8E21-946F3BDF7754}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{877EF533-A9FA-493A-8E21-946F3BDF7754}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{877EF533-A9FA-493A-8E21-946F3BDF7754}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9D579F4C-F1A6-464A-A0D9-BB462E338CE2} = {D93C0347-F2C4-4D5C-B4E9-0C5F6F14A2F5}
+		{09295303-5041-44BA-B7ED-470590BE3148} = {1E44D430-72A8-4A4A-9E92-656C02085F51}
+		{FC572014-24EF-4277-A1B3-C2500544CAF4} = {D632AAED-ABDB-4DE8-8BF9-5EA30BF3372F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {174387A3-7171-4551-9012-5B3F198C5A2D}

@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BLL_Produit_Ecologique\BLL_Produit_Ecologique.csproj" />
+    <ProjectReference Include="..\DAL-Produit_Ecologique\DAL-Produit_Ecologique.csproj" />
+    <ProjectReference Include="..\Shared-Produit_Ecologique\Shared-Produit_Ecologique.csproj" />
+  </ItemGroup>
+
+</Project>

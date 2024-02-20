@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{7320e97e-4d66-4869-98e3-e946754327d9}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql150DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -57,9 +57,20 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="tables" />
+    <Folder Include="StoredProcedures" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="tables\Produit.sql" />
-    <Build Include="tables\CritereEcologique.sql" />
+    <Build Include="tables\EcoScore.sql" />
+    <Build Include="tables\Media.sql" />
+    <Build Include="tables\Categorie.sql" />
+    <Build Include="tables\Commande.sql" />
+    <Build Include="tables\Panier.sql" />
+    <Build Include="StoredProcedures\SP_Produit_GetAll.sql" />
+    <Build Include="StoredProcedures\SP_Produit_GetPlusPopulaires.sql" />
+    <Build Include="StoredProcedures\SP_Categorie_GetAll.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DB_Produit_Eco.publish.xml" />
   </ItemGroup>
 </Project>

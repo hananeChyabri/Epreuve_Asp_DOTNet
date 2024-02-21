@@ -1,0 +1,30 @@
+﻿** Highlights
+     Tables that will be recreated with data migrated
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[Categorie] (Table)
+       [dbo].[Commande] (Table)
+       [dbo].[EcoScore] (Table)
+       [dbo].[Media] (Table)
+       [dbo].[Panier] (Table)
+       [dbo].[Produit] (Table)
+       [dbo].[FK_Media_Produit] (Foreign Key)
+       [dbo].[FK_Panier_Commande] (Foreign Key)
+       [dbo].[FK_Panier_Produit] (Foreign Key)
+       [dbo].[FK_Produit_EcoScore] (Foreign Key)
+       [dbo].[FK_Produit_Categorie] (Foreign Key)
+       [dbo].[SP_Categorie_GetAll] (Procedure)
+       [dbo].[SP_Produit_GetAll] (Procedure)
+       [dbo].[SP_Produit_GetPlusPopulaires] (Procedure)
+       [dbo].[SP_Produit_Insert] (Procedure)
+       [dbo].[SP_Produit_Update] (Procedure)
+
+** Supporting actions

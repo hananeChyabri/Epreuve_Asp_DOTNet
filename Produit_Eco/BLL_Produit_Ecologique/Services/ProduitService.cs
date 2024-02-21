@@ -29,7 +29,7 @@ namespace BLL_Produit_Ecologique.Services
 
         public Produit Get(int id)
         {
-            throw new NotImplementedException();
+            return _produitrepository.Get(id).ToBLL();
         }
 
         public void Delete(int id)
@@ -39,12 +39,18 @@ namespace BLL_Produit_Ecologique.Services
 
         public int Insert(Produit data)
         {
-            throw new NotImplementedException();
+            return _produitrepository.Insert(data.ToDAL());
         }
 
-        public bool Update(int id, Produit data)
+        public void Update(Produit data)
         {
-            throw new NotImplementedException();
+            _produitrepository.Update(data.ToDAL());
+        }
+
+        public IEnumerable<Produit> GetPlusPopulaire()
+        {
+            return _produitrepository.GetPlusPopulaire().Select(d => d.ToBLL());
+            
         }
     }
 }

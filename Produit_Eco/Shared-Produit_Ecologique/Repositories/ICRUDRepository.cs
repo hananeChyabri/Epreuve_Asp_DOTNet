@@ -9,7 +9,7 @@ namespace Shared_Produit_Ecologique.Repositories
         IEnumerable<TEntity> Get();
         TEntity Get(TId id);
         TId Insert(TEntity data);
-        bool Update(TId id, TEntity data);
+        void Update(TEntity data);
         void Delete(TId id);
 
     }

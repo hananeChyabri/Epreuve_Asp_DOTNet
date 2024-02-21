@@ -1,5 +1,4 @@
 ﻿using DAL_Produit_Ecologique.Entities;
-using DAL_Produit_Ecologique.Mappers;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using Shared_Produit_Ecologique.Repositories;
@@ -10,49 +9,46 @@ using System.Text;
 
 namespace DAL_Produit_Ecologique.Services
 {
-    public class ProduitService : BaseService, IProduitRepository<Produit>
+    public class CategorieService : BaseService, ICategorieRepository<string>
     {
-        public ProduitService(IConfiguration configuration) : base(configuration, "DBProduitEcologique")
+        public CategorieService(IConfiguration configuration) : base(configuration, "DBProduitEcologique")
         {
         }
-        public void Delete(int id)
+        public void Delete(string id)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Produit> Get()
+        public IEnumerable<string> Get()
         {
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "SP_Produit_GetPlusPopulaires";
+                    command.CommandText = "SP_Categorie_GetAll";
                     command.CommandType = CommandType.StoredProcedure;
                     connection.Open();
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            yield return reader.ToProduit();
+                            yield return reader["Categorie"].ToString();
                         }
                     }
                 }
-
             }
         }
-
-        public Produit Get(int id)
-        {
-          
-            throw new NotImplementedException();
-        }
-
-        public int Insert(Produit data)
+        public string Get(string id)
         {
             throw new NotImplementedException();
         }
 
-        public bool Update(int id, Produit data)
+        public string Insert(string data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update( string data)
         {
             throw new NotImplementedException();
         }

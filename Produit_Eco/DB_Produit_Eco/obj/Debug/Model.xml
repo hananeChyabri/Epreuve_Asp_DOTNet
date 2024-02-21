@@ -126,7 +126,7 @@
 					<Element Type="SqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[EcoScore].[EcoScore]" />
+								<References Name="[dbo].[Produit].[Id_Produit]" />
 							</Entry>
 						</Relationship>
 					</Element>
@@ -134,7 +134,7 @@
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[EcoScore]" />
+					<References Name="[dbo].[Produit]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="7" />
@@ -145,7 +145,7 @@
 					<Element Type="SqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[Produit].[Id_Produit]" />
+								<References Name="[dbo].[EcoScore].[EcoScore]" />
 							</Entry>
 						</Relationship>
 					</Element>
@@ -153,7 +153,7 @@
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[Produit]" />
+					<References Name="[dbo].[EcoScore]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="8" />
@@ -242,13 +242,13 @@
 									<Property Name="Length" Value="1" />
 									<Relationship Name="Type">
 										<Entry>
-											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+											<References ExternalSource="BuiltIns" Name="[char]" />
 										</Entry>
 									</Relationship>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="7" />
+						<AttachedAnnotation Disambiguator="8" />
 					</Element>
 				</Entry>
 			</Relationship>
@@ -531,7 +531,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="8" />
+						<AttachedAnnotation Disambiguator="7" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -611,7 +611,7 @@
 									<Property Name="Length" Value="1" />
 									<Relationship Name="Type">
 										<Entry>
-											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+											<References ExternalSource="BuiltIns" Name="[char]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -725,6 +725,78 @@ END]]></Value>
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[SP_Produit_GetAll]&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[SP_Produit_GetById]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+    SELECT [Id_Produit],
+           [Nom],
+           [Description],
+           [prix],
+           [Nombre_vente],
+           [EcoScore],
+           [Categorie]
+    FROM [dbo].[Produit]
+    WHERE [Id_Produit] = @id_Produit;]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Produit]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[Id_Produit]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[Nom]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[Description]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[prix]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[Nombre_vente]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[EcoScore]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[Categorie]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Produit_GetById].[@id_Produit]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Produit_GetById].[@id_Produit]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="301" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[SP_Produit_GetById]&#xD;&#xA;    @id_Produit INT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[SP_Produit_GetPlusPopulaires]">
 			<Property Name="BodyScript">
 				<Value><![CDATA[
@@ -777,6 +849,331 @@ END]]></Value>
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[SP_Produit_GetPlusPopulaires]&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[SP_Produit_Insert]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+    INSERT INTO [Produit] ([Nom], [Description], [Prix], [Nombre_vente], [EcoScore], [Categorie])
+	OUTPUT [inserted].[Id_Produit]
+    VALUES (@nom, @description, @prix, @nombreVente, @ecoScore, @categorie)]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Produit]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[Nom]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[Description]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[prix]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[Nombre_vente]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[EcoScore]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[Categorie]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Produit_Insert].[@nom]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Produit_Insert].[@description]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Produit_Insert].[@prix]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Produit_Insert].[@nombreVente]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Produit_Insert].[@ecoScore]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Produit_Insert].[@categorie]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[Id_Produit]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Produit_Insert].[@nom]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="64" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Produit_Insert].[@description]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="64" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Produit_Insert].[@prix]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="2" />
+									<Property Name="Precision" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Produit_Insert].[@nombreVente]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Produit_Insert].[@ecoScore]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="1" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[char]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Produit_Insert].[@categorie]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="64" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="411" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[SP_Produit_Insert]&#xD;&#xA;    @nom NVARCHAR(64),&#xD;&#xA;    @description NVARCHAR(64),&#xD;&#xA;    @prix DECIMAL(10, 2),&#xD;&#xA;    @nombreVente INT,&#xD;&#xA;    @ecoScore CHAR,&#xD;&#xA;    @categorie NVARCHAR(64)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[SP_Produit_Update]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+    UPDATE [dbo].[Produit]
+    SET [Nom] = @nom,
+        [Description] = @description,
+        [prix] = @prix,
+        [EcoScore] = @ecoScore,
+        [Categorie] = @categorie
+    WHERE [Id_Produit] = @id_Produit]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Produit]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[Nom]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Produit_Update].[@nom]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[Description]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Produit_Update].[@description]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[prix]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Produit_Update].[@prix]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[EcoScore]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Produit_Update].[@ecoScore]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[Categorie]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Produit_Update].[@categorie]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[Id_Produit]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Produit_Update].[@id_Produit]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Produit_Update].[@id_Produit]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Produit_Update].[@nom]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Produit_Update].[@description]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="255" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Produit_Update].[@prix]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="2" />
+									<Property Name="Precision" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Produit_Update].[@ecoScore]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="1" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[char]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Produit_Update].[@categorie]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="64" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="423" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[SP_Produit_Update]&#xD;&#xA;    @id_Produit INT,&#xD;&#xA;    @nom NVARCHAR(100),&#xD;&#xA;    @description NVARCHAR(255),&#xD;&#xA;    @prix DECIMAL(10, 2),&#xD;&#xA;    @ecoScore CHAR,&#xD;&#xA;    @categorie NVARCHAR(64)&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
 	</Model>

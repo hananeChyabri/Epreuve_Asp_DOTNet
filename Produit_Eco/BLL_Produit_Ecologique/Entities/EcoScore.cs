@@ -8,6 +8,8 @@ namespace BLL_Produit_Ecologique.Entities
     {
         A,
         B,
-        C
+        C,
+        D,
+        E
     }
 }

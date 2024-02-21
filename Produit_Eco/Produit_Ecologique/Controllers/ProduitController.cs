@@ -20,6 +20,14 @@ namespace Produit_Ecologique.Controllers
         // GET: ProduitController
         public ActionResult Index()
         {
+            IEnumerable<ProduitListItemViewModels> model = _produitRepository.GetPlusPopulaire().Select(d => d.ToListItem());
+
+            return View(model);
+        }
+
+        // GET: ProduitController
+        public ActionResult GetAllProduct()
+        {
             IEnumerable<ProduitListItemViewModels> model = _produitRepository.Get().Select(d => d.ToListItem());
 
             return View(model);
@@ -40,11 +48,14 @@ namespace Produit_Ecologique.Controllers
         // POST: ProduitController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(ProduitCreateForm form)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                if (form is null) ModelState.AddModelError(nameof(form), "Le formulaire ne correspond pas");
+                if (!ModelState.IsValid) throw new Exception();
+                int id = _produitRepository.Insert(form.ToBLL());
+                return RedirectToAction(nameof(Details), new { id });
             }
             catch
             {
@@ -77,21 +88,26 @@ namespace Produit_Ecologique.Controllers
         // GET: ProduitController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            ProduitEditForm model = _produitRepository.Get(id).ToEditForm();
+            return View(model);
         }
 
         // POST: ProduitController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, ProduitEditForm form)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                if (form is null) ModelState.AddModelError(nameof(form), "Le formulaire ne correspond pas");
+                if (!ModelState.IsValid) throw new Exception();
+                _produitRepository.Update(form.ToBLL());
+             
+                return RedirectToAction(nameof(Details), new { id });
             }
             catch
             {
-                return View();
+                return View(form);
             }
         }
 

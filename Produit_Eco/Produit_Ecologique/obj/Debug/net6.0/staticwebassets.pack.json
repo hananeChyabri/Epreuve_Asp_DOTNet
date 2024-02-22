@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\Produit_Ecologique.bundle.scp.css"
     },
     {
+      "Id": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\assets\\imgs\\miel.jpg",
+      "PackagePath": "staticwebassets\\assets\\imgs\\miel.jpg"
+    },
+    {
+      "Id": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\assets\\imgs\\miel2.jpg",
+      "PackagePath": "staticwebassets\\assets\\imgs\\miel2.jpg"
+    },
+    {
       "Id": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

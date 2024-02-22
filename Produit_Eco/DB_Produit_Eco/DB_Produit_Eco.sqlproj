@@ -58,6 +58,7 @@
     <Folder Include="Properties" />
     <Folder Include="tables" />
     <Folder Include="StoredProcedures" />
+    <Folder Include="scripts" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="tables\Produit.sql" />
@@ -72,8 +73,13 @@
     <Build Include="StoredProcedures\SP_Produit_Insert.sql" />
     <Build Include="StoredProcedures\SP_Produit_Update.sql" />
     <Build Include="StoredProcedures\SP_Produit_GetById.sql" />
+    <Build Include="StoredProcedures\SP_Produit_Delete.sql" />
+    <Build Include="StoredProcedures\SP_Media_Insert.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DB_Produit_Eco.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="scripts\Script.PostDeployment.sql" />
   </ItemGroup>
 </Project>

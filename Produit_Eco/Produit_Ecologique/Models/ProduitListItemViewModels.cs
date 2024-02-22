@@ -20,6 +20,8 @@ namespace Produit_Ecologique.Models
 
         public EcoScore EcoScore { get; set; }
         public string Categorie { get; set; }
+        public IEnumerable<MediaListItemViewModels> Media { get; set; }
+  
 
     }
 }

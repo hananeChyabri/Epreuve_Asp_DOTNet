@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "yStSOOE1DX/jZdChn9FEq/a4WkoeDZ7kqBWyoh5ux0M=",
+  "Hash": "/aR1KatAFmyNiD2UCUFSCLyAuMTn5+1R1dEMuCsqWHU=",
   "Source": "Produit_Ecologique",
   "BasePath": "_content/Produit_Ecologique",
   "Mode": "Default",
@@ -49,6 +49,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Produit_Ecologique.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\assets\\imgs\\miel.jpg",
+      "SourceId": "Produit_Ecologique",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\",
+      "BasePath": "_content/Produit_Ecologique",
+      "RelativePath": "assets/imgs/miel.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\imgs\\miel.jpg"
+    },
+    {
+      "Identity": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\assets\\imgs\\miel2.jpg",
+      "SourceId": "Produit_Ecologique",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\",
+      "BasePath": "_content/Produit_Ecologique",
+      "RelativePath": "assets/imgs/miel2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\imgs\\miel2.jpg"
     },
     {
       "Identity": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\css\\site.css",

@@ -16,4 +16,8 @@
     <ProjectReference Include="..\Shared-Produit_Ecologique\Shared-Produit_Ecologique.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\assets\imgs\" />
+  </ItemGroup>
+
 </Project>

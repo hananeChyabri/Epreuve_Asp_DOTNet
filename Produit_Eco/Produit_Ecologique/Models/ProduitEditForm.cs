@@ -29,20 +29,11 @@ namespace Produit_Ecologique.Models
 
         [DisplayName("EcoScore")]
         [Required(ErrorMessage = "L'EcoScore du produit est obligatoire.")]
-        [StringLength(1, ErrorMessage = "La longueur de l'EcoScore du produit doit être de 1 caractère.")]
         public EcoScore EcoScore { get; set; }
 
         [DisplayName("Catégorie")]
-        [Required(ErrorMessage = "La catégorie du produit est obligatoire.")]
-        [MinLength(2, ErrorMessage = "La catégorie du produit doit être composée de minimum 2 caractères.")]
-        [MaxLength(64, ErrorMessage = "La catégorie du produit doit être composée de maximum 64 caractères.")]
+      
         public string Categorie { get; set; }
 
-        // pour ajouter une image pour le produit
-        [DisplayName("Image")]
-        public IFormFile Image { get; set; }
-
-        [ScaffoldColumn(false)]
-        public string ImageUrl { get; set; }
     }
 }

@@ -15,7 +15,8 @@ namespace Produit_Ecologique.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "Produit");
+
         }
 
         public IActionResult Privacy()

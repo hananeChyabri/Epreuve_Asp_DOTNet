@@ -17,7 +17,17 @@ namespace DAL_Produit_Ecologique.Services
         }
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "SP_Produit_Delete";
+                    command.Parameters.AddWithValue("id_produit", id);
+                    command.CommandType = CommandType.StoredProcedure;
+                    connection.Open();
+                    if (command.ExecuteNonQuery() <= 0) throw new ArgumentOutOfRangeException(nameof(id), $"L'identifiant {id} ne correspond à aucune valeur");
+                }
+            }
         }
 
         public IEnumerable<Produit> Get()
@@ -114,12 +124,11 @@ namespace DAL_Produit_Ecologique.Services
                     command.Parameters.AddWithValue("nom", entity.Nom);
                     command.Parameters.AddWithValue("description", entity.Description);
                     command.Parameters.AddWithValue("prix", entity.Prix);
-                    command.Parameters.AddWithValue("nombreVente", entity.Nombre_vente);
                     command.Parameters.AddWithValue("ecoScore", entity.EcoScore);
-                    command.Parameters.AddWithValue("Categorie", entity.Categorie);
+                    command.Parameters.AddWithValue("categorie", entity.Categorie);
                     connection.Open();
                     command.CommandType = CommandType.StoredProcedure;
-                    connection.Open();
+                 
                     if (command.ExecuteNonQuery() <= 0) throw new ArgumentOutOfRangeException(nameof(entity.Id_Produit), $"L'identifiant {entity.Id_Produit} ne correspond à aucune valeur");
                 }
 

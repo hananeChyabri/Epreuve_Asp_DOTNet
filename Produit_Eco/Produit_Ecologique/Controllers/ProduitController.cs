@@ -4,19 +4,22 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Shared_Produit_Ecologique.Repositories;
 using Produit_Ecologique.Handlers;
+using System.Reflection;
 
 namespace Produit_Ecologique.Controllers
 {
     public class ProduitController : Controller
     {
         private readonly IProduitRepository<Produit> _produitRepository;
+        private readonly IMediaRepository<Media> _mediaRepository;
 
-        public ProduitController(IProduitRepository<Produit> produitRepository)
+        public ProduitController(IProduitRepository<Produit> produitRepository, IMediaRepository<Media> mediaRepository)
         {
             _produitRepository = produitRepository;
-
+            _mediaRepository = mediaRepository;
         }
 
+        /*pour afficher aussi les plus popolaires*/
         // GET: ProduitController
         public ActionResult Index()
         {
@@ -25,18 +28,30 @@ namespace Produit_Ecologique.Controllers
             return View(model);
         }
 
+        /*j'utilise l action getAllProduct pour afficher aussi le resulat du recherche*/
         // GET: ProduitController
-        public ActionResult GetAllProduct()
+        public ActionResult GetAllProduct(string? search)
         {
-            IEnumerable<ProduitListItemViewModels> model = _produitRepository.Get().Select(d => d.ToListItem());
+            IEnumerable<ProduitListItemViewModels> model = null;
+            if (string.IsNullOrWhiteSpace(search))
+            {
+            model = _produitRepository.Get().Select(d => d.ToListItem());
+                return View(model);
+            }
+            else
+                model = _produitRepository.Get().Where(d => d.Nom == search).Select(d => d.ToListItem());
 
             return View(model);
+
+
         }
 
         // GET: ProduitController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            ProduitDetailsViewModel model = _produitRepository.Get(id).ToDetails();
+            ViewBag.Id = id;
+            return View(model);
         }
 
         // GET: ProduitController/Create
@@ -45,44 +60,48 @@ namespace Produit_Ecologique.Controllers
             return View();
         }
 
+
+
         // POST: ProduitController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(ProduitCreateForm form)
+        public async Task<ActionResult> Create(ProduitCreateForm form)
         {
+
             try
             {
                 if (form is null) ModelState.AddModelError(nameof(form), "Le formulaire ne correspond pas");
                 if (!ModelState.IsValid) throw new Exception();
                 int id = _produitRepository.Insert(form.ToBLL());
+                await form.Image.SaveFile();
+                _mediaRepository.Insert(new Media(0, form.Image.FileName, id));
+
                 return RedirectToAction(nameof(Details), new { id });
             }
             catch
             {
                 return View();
             }
+
         }
 
-        // GET: ProduitController/Create
-        public ActionResult Recherche()
-        {
-            return View();
-        }
-
-        // POST: ProduitController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Recherche(ProduitRechercheFormModel form)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        /*j'utilise l action getAllProduct pour afficher aussi le resulat du recherche*/
+        //public ActionResult Recherche(string? search)
+        //{
+        //    try
+        //    {
+        //        if(search is null)
+        //        return RedirectToAction(nameof(Index));
+      
+        //        IEnumerable<ProduitListItemViewModels> model = _produitRepository.Get().Where(d => d.Nom == "test").Select(d => d.ToListItem());
+               
+        //        return View("GetAllProduct", model);
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
 
 
         // GET: ProduitController/Edit/5
@@ -114,16 +133,24 @@ namespace Produit_Ecologique.Controllers
         // GET: ProduitController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            ProduitDeleteForm model = _produitRepository.Get(id).ToDelete();
+            if (model is null)
+            {
+                TempData["Error"] = "Produit inexistant...";
+                return RedirectToAction("Index");
+            }
+            return View(model);
         }
 
         // POST: ProduitController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int id, ProduitDeleteForm form)
         {
             try
             {
+                _produitRepository.Delete(id);
+                TempData["Error"] = "Erreur de suppression...";
                 return RedirectToAction(nameof(Index));
             }
             catch

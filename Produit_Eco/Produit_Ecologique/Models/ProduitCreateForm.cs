@@ -1,4 +1,5 @@
 ﻿using BLL_Produit_Ecologique.Entities;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Produit_Ecologique.Models
@@ -24,5 +25,8 @@ namespace Produit_Ecologique.Models
 
         [Required(ErrorMessage = "La catégorie du produit est obligatoire.")]
         public string Categorie { get; set; }
+
+        [DisplayName("Affiche")]
+        public IFormFile Image { get; set; }
     }
 }

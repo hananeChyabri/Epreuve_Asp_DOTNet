@@ -1,0 +1,72 @@
+﻿@model Produit_Ecologique.Models.ProduitDetailsViewModel
+
+@{
+    ViewData["Title"] = "Details";
+    int id = ViewBag.Id;
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ProduitDetailsViewModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nom)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nom)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Prix)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Prix)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre_Vente)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nombre_Vente)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EcoScore)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EcoScore)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Categorie)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Categorie)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.Id_Produit }) |
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<hr />
+<h2>@Html.DisplayNameFor(model => model.Media)</h2>
+
+@if (Model.Media.Count() > 0)
+{
+    <partial name="_MediaListPartialView" model="Model.Media" />
+}
+else
+{
+    <div>
+
+        <p>pas de media pour le moment peut-être en ajouter ?</p>
+      
+    </div>
+}
+<a asp-action="Create" asp-controller="Media" asp-route-id_produit="@id">Add an image to this product</a>

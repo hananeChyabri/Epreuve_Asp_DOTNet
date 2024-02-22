@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL_Produit_Ecologique.Entities;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -15,6 +16,7 @@ namespace BLL_Produit_Ecologique.Entities
         public int Nombre_vente { get; set; }
         public EcoScore EcoScore { get; set; }
         public string Categorie { get; set; }
+        public string url_image {  get; set; }
 
         public Media[] Media
         {
@@ -35,13 +37,31 @@ namespace BLL_Produit_Ecologique.Entities
             Categorie = categorie;
         }
 
-
-        public Produit()
+        private Produit()
         {
-            // Initialize collections to prevent null reference exceptions
             _media = new List<Media>();
+
         }
 
-        
+        public void AddMedia(Media newMedia)
+        {
+            if (_media is null) _media = new List<Media>();
+           // _media ??= new List<Media>();
+
+            _media.Add(newMedia);
+        }
+
+        public void AddMedias(IEnumerable<Media> medias)
+        {
+            if (medias is null) throw new ArgumentNullException(nameof(medias));
+            foreach (Media media in medias)
+            {
+                AddMedia(media);
+            }
+        }
+
+      
+
+
     }
 }

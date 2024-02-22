@@ -23,5 +23,18 @@ namespace DAL_Produit_Ecologique.Mappers
 
             };
         }
+
+        public static Media ToMedia(this IDataRecord record)
+        {
+            if (record is null) return null;
+            return new Media()
+            {
+                Id_Media = (int)record["Id_Media"],
+                Id_Produit = (int)record["Id_Produit"],
+                Url_Image = (string)record["url_image"],
+      
+
+            };
+        }
     }
 }

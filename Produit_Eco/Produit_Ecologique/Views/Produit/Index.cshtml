@@ -4,8 +4,33 @@
     ViewData["Title"] = "Index";
 }
 
+
+<div class="col-md-12">
+    <form asp-action="GetAllProduct" method="get">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input name="search" class="form-control custom-input" placeholder="Recherche par nom..." />
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <!--  pour la catégorie -->
+                </div>
+            </div>
+            <div class="col-md-4">
+
+       
+              <div class="form-group">
+            <input type="submit" value="Search" class="btn btn-primary" />
+            </div>
+            </div>
+        </div>
+    </form>
+</div>
 <h1> Our popular products</h1>
-@* <partial name="_RechercheProduitPartial" model="Model" /> *@
+
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -13,6 +38,9 @@
 <table class="table">
     <thead>
         <tr>
+            <th>
+              image
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Nom)
             </th>
@@ -37,6 +65,11 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+                <td>
+
+                    <img src="~/assets/imgs/@(item.Media.FirstOrDefault()?.url_image)" style="width: 200px; height: 200px;" />
+                </td>
+               
             <td>
                 @Html.DisplayFor(modelItem => item.Nom)
             </td>

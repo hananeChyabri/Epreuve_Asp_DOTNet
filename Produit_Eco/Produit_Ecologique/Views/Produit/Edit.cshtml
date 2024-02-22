@@ -1,4 +1,5 @@
 ﻿@model Produit_Ecologique.Models.ProduitEditForm
+@inject BLL_Produit_Ecologique.Services.CategorieService categorieRepository
 
 @{
     ViewData["Title"] = "Edit";
@@ -34,12 +35,26 @@
             </div>
             <div class="form-group">
                 <label asp-for="EcoScore" class="control-label"></label>
-                <input asp-for="EcoScore" class="form-control" />
+                <select asp-for="EcoScore" class="form-control">
+                    <option value="">Veuillez choisir un score</option>
+                    @foreach (var score in Enum.GetNames(typeof(EcoScore)))
+                    {
+                        <option value="@score">@score</option>
+                    }
+                </select>
                 <span asp-validation-for="EcoScore" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Categorie" class="control-label"></label>
-                <input asp-for="Categorie" class="form-control" />
+                @Html.DropDownListFor(
+                m => m.Categorie,
+                categorieRepository.Get()
+                .Select(d => new SelectListItem(){
+                Text = d,
+                Value = d}),
+                "Veuillez choisir une categorie",
+                new { @class = "form-select"}
+                )
                 <span asp-validation-for="Categorie" class="text-danger"></span>
             </div>
             <div class="form-group">

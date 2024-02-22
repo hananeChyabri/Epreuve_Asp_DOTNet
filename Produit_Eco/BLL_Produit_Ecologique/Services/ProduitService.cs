@@ -12,29 +12,39 @@ namespace BLL_Produit_Ecologique.Services
     public class ProduitService : IProduitRepository<Produit>
     {
         private readonly IProduitRepository<DAL.Produit> _produitrepository;
-        //   private readonly IMediaRepository<Media> _mediaRepository;
+        private readonly IMediaRepository<Media> _mediaRepository;
 
 
-        public ProduitService(IProduitRepository<DAL.Produit> produitrepository)
+        public ProduitService(IProduitRepository<DAL.Produit> produitrepository, IMediaRepository<Media> mediaRepository)
         {
             _produitrepository = produitrepository;
-
+            _mediaRepository = mediaRepository;
         }
 
         public IEnumerable<Produit> Get()
         {
-           
-            return _produitrepository.Get().Select(d => d.ToBLL());
+            return _produitrepository.Get().Select(d =>
+            {
+                Produit result = d.ToBLL();
+                IEnumerable<Media> medias = _mediaRepository.GetByProduit(result.Id_Produit);
+                result.AddMedias(medias);
+
+                return result;
+            });
         }
 
         public Produit Get(int id)
         {
-            return _produitrepository.Get(id).ToBLL();
+
+            Produit entity = _produitrepository.Get(id).ToBLL();
+            IEnumerable<Media> medias = _mediaRepository.GetByProduit(id);
+            entity.AddMedias(medias);
+            return entity;
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _produitrepository.Delete(id);
         }
 
         public int Insert(Produit data)
@@ -49,8 +59,17 @@ namespace BLL_Produit_Ecologique.Services
 
         public IEnumerable<Produit> GetPlusPopulaire()
         {
-            return _produitrepository.GetPlusPopulaire().Select(d => d.ToBLL());
-            
+     
+
+            return _produitrepository.GetPlusPopulaire().Select(d =>
+            {
+                Produit result = d.ToBLL();
+                IEnumerable<Media> medias = _mediaRepository.GetByProduit(result.Id_Produit);
+                result.AddMedias(medias);
+
+                return result;
+            });
+
         }
     }
 }

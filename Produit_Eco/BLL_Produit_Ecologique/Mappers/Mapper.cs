@@ -52,5 +52,31 @@ namespace BLL_Produit_Ecologique.Mappers
                 );
 
         }
+
+        public static DAL.Media ToDAL(this BLL.Media entity)
+        {
+            if (entity is null) return null;
+            return new DAL.Media()
+            {
+                Id_Produit = entity.Id_Produit,
+                Url_Image = entity.Url_Image
+
+
+            };
+        }
+
+        public static BLL.Media ToBLL(this DAL.Media entity)
+        {
+            if (entity is null) return null;
+            return new BLL.Media(
+                entity.Id_Media,
+                entity.Url_Image,
+                entity.Id_Produit
+                );
+
+
+        }
+
+
     }
 }

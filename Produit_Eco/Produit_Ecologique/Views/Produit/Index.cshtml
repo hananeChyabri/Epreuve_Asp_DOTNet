@@ -5,30 +5,7 @@
 }
 
 
-<div class="col-md-12">
-    <form asp-action="GetAllProduct" method="get">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="form-group">
-                    <input name="search" class="form-control custom-input" placeholder="Recherche par nom..." />
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <!--  pour la catégorie -->
-                </div>
-            </div>
-            <div class="col-md-4">
-
-       
-              <div class="form-group">
-            <input type="submit" value="Search" class="btn btn-primary" />
-            </div>
-            </div>
-        </div>
-    </form>
-</div>
+<partial name="_RechercheFormPartialView" />
 <h1> Our popular products</h1>
 
 

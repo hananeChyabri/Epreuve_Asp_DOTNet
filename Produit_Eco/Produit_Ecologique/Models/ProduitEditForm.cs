@@ -23,6 +23,7 @@ namespace Produit_Ecologique.Models
         public string Description { get; set; }
 
         [DisplayName("Prix")]
+        [DataType(DataType.Currency)]
         [Required(ErrorMessage = "Le prix du produit est obligatoire.")]
         [Range(0.01, double.MaxValue, ErrorMessage = "Le prix du produit doit être supérieur à zéro.")]
         public decimal Prix { get; set; }

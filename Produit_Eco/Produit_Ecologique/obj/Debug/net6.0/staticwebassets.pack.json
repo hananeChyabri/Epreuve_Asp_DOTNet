@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\assets\\imgs\\chemise2.jpg"
     },
     {
+      "Id": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\assets\\imgs\\matrix.png",
+      "PackagePath": "staticwebassets\\assets\\imgs\\matrix.png"
+    },
+    {
       "Id": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\assets\\imgs\\miel.jpg",
       "PackagePath": "staticwebassets\\assets\\imgs\\miel.jpg"
     },

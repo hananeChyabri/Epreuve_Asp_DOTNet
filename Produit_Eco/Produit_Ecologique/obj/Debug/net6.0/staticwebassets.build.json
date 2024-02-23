@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OhA2mi0jPP+/vp4KO6/R5M7rG2h1dh76Z3liyh1X51I=",
+  "Hash": "DKlXB/soWvLK2gDgLXX/rQ2VpeuwoeAUFsztyFSkonE=",
   "Source": "Produit_Ecologique",
   "BasePath": "_content/Produit_Ecologique",
   "Mode": "Default",
@@ -117,6 +117,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\imgs\\chemise2.jpg"
+    },
+    {
+      "Identity": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\assets\\imgs\\matrix.png",
+      "SourceId": "Produit_Ecologique",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\",
+      "BasePath": "_content/Produit_Ecologique",
+      "RelativePath": "assets/imgs/matrix.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\imgs\\matrix.png"
     },
     {
       "Identity": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\assets\\imgs\\miel.jpg",

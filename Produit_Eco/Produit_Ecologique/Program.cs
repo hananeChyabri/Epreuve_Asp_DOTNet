@@ -1,3 +1,4 @@
+using Produit_Ecologique.Handlers;
 using Shared_Produit_Ecologique.Repositories;
 using BLL = BLL_Produit_Ecologique;
 using DAL = DAL_Produit_Ecologique;
@@ -18,8 +19,31 @@ namespace Produit_Ecologique
             builder.Services.AddScoped<IMediaRepository<DAL.Entities.Media>, DAL.Services.MediaService>();
             builder.Services.AddScoped<BLL.Services.CategorieService>();
             builder.Services.AddScoped<DAL.Services.CategorieService>();
-       
 
+
+            #region Session
+            builder.Services.AddHttpContextAccessor();  //Injection de dépendance du HttpContext dans le SessionManager (Handlers)
+            builder.Services.AddDistributedMemoryCache();   //Ajout d'espace mémoire pour lier les cookie à l'application
+
+            builder.Services.AddSession(options =>          //Création d'un cookie pour sauvegarder la session
+            {
+                options.Cookie.Name = "ASP-Demo-Session";
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+                options.IdleTimeout = TimeSpan.FromMinutes(20);
+            });
+
+            builder.Services.Configure<CookiePolicyOptions>(options =>  //Définition des règles (pour être OK avec le RGPD)
+            {
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+                options.Secure = CookieSecurePolicy.Always;
+            });
+
+            builder.Services.AddScoped<PanierSessionManager>();   //Ajout du UserSessionManager (Handlers) par injection de dépendance 
+
+
+            #endregion
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -27,6 +51,11 @@ namespace Produit_Ecologique
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+            app.UseSession();       //Activation des Middlewares permettant le contrôle 
+
+            app.UseCookiePolicy();  //du Cookie de Session durant chaque requête HTTP
+
             app.UseStaticFiles();
 
             app.UseRouting();

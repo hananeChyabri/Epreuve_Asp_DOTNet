@@ -8,7 +8,7 @@ namespace Produit_Ecologique.Models
         public string Nom { get; set; }
 
         // Champ de sélection pour les catégories
-        public int? Id_Categorie { get; set; } 
+        public string Categorie { get; set; }
         public List<Categorie> Categories { get; set; } // Liste des catégories disponibles
     }
 }

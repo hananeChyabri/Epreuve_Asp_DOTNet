@@ -12,11 +12,13 @@ namespace Produit_Ecologique.Controllers
     {
         private readonly IProduitRepository<Produit> _produitRepository;
         private readonly IMediaRepository<Media> _mediaRepository;
+        private readonly PanierSessionManager _panierSessionManager;
 
-        public ProduitController(IProduitRepository<Produit> produitRepository, IMediaRepository<Media> mediaRepository)
+        public ProduitController(IProduitRepository<Produit> produitRepository, IMediaRepository<Media> mediaRepository, PanierSessionManager panierSessionManager)
         {
             _produitRepository = produitRepository;
             _mediaRepository = mediaRepository;
+            _panierSessionManager = panierSessionManager;
         }
 
         /*pour afficher aussi les plus popolaires*/
@@ -85,23 +87,6 @@ namespace Produit_Ecologique.Controllers
 
         }
 
-        /*j'utilise l action getAllProduct pour afficher aussi le resulat du recherche*/
-        //public ActionResult Recherche(string? search)
-        //{
-        //    try
-        //    {
-        //        if(search is null)
-        //        return RedirectToAction(nameof(Index));
-      
-        //        IEnumerable<ProduitListItemViewModels> model = _produitRepository.Get().Where(d => d.Nom == "test").Select(d => d.ToListItem());
-               
-        //        return View("GetAllProduct", model);
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
 
 
         // GET: ProduitController/Edit/5
@@ -158,5 +143,8 @@ namespace Produit_Ecologique.Controllers
                 return View();
             }
         }
+
+
+
     }
 }

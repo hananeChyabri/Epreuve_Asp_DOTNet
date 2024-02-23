@@ -1,8 +1,5 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@inject BLL_Produit_Ecologique.Services.CategorieService categorieRepository
+
 <div class="col-md-12">
     <form asp-action="GetAllProduct" method="get">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -13,13 +10,16 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="form-group">
-                    <!--  pour la catégorie -->
-                </div>
+                <select  class="form-control">
+                    <option value="">Veuillez choisir un score</option>
+                    @foreach (var score in Enum.GetValues(typeof(EcoScore)))
+                    {
+                        <option name="search" value="@score">@score</option>
+                    }
+                </select>
+            
             </div>
             <div class="col-md-4">
-
-
                 <div class="form-group">
                     <input type="submit" value="Search" class="btn btn-primary" />
                 </div>

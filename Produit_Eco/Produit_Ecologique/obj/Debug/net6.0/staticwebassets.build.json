@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/aR1KatAFmyNiD2UCUFSCLyAuMTn5+1R1dEMuCsqWHU=",
+  "Hash": "0iomCWAQrXaJo8h2q6vZkGCytBUeEnrOk9qiH0WL4k0=",
   "Source": "Produit_Ecologique",
   "BasePath": "_content/Produit_Ecologique",
   "Mode": "Default",
@@ -83,6 +83,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\imgs\\miel2.jpg"
+    },
+    {
+      "Identity": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\assets\\imgs\\panier.jpg",
+      "SourceId": "Produit_Ecologique",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\",
+      "BasePath": "_content/Produit_Ecologique",
+      "RelativePath": "assets/imgs/panier.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\imgs\\panier.jpg"
+    },
+    {
+      "Identity": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\assets\\imgs\\tapis1.jpg",
+      "SourceId": "Produit_Ecologique",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\",
+      "BasePath": "_content/Produit_Ecologique",
+      "RelativePath": "assets/imgs/tapis1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\imgs\\tapis1.jpg"
     },
     {
       "Identity": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\css\\site.css",

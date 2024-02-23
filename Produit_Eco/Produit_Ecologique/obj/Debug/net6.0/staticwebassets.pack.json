@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\assets\\imgs\\miel2.jpg"
     },
     {
+      "Id": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\assets\\imgs\\panier.jpg",
+      "PackagePath": "staticwebassets\\assets\\imgs\\panier.jpg"
+    },
+    {
+      "Id": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\assets\\imgs\\tapis1.jpg",
+      "PackagePath": "staticwebassets\\assets\\imgs\\tapis1.jpg"
+    },
+    {
       "Id": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

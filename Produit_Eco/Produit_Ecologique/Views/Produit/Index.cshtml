@@ -66,9 +66,10 @@
                 @Html.DisplayFor(modelItem => item.Categorie)
             </td>
             <td>
-                    @Html.ActionLink("Edit", "Edit", new { id=item.Id_Produit }) |
-                    @Html.ActionLink("Details", "Details", new { id=item.Id_Produit }) |
-                    @Html.ActionLink("Delete", "Delete", new {  id=item.Id_Produit })
+                    @Html.ActionLink("Edit", "Edit", new { id=item.Id_Produit } ,new { @class = "btn btn-primary" }) 
+                    @Html.ActionLink("Details", "Details", new { id=item.Id_Produit }, new { @class = "btn btn-primary" }) 
+                    @Html.ActionLink("Delete", "Delete", new {  id=item.Id_Produit } , new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Ajouter", "AddToCart","Panier", new {  id=item.Id_Produit } , new { @class = "btn btn-primary" })
             </td>
         </tr>
          

@@ -115,7 +115,27 @@ namespace Produit_Ecologique.Handlers
 
 
         }
- 
+
+        public static PanierFormModel ToPanier(this Produit entity)
+        {
+            if (entity is null) return null;
+            return new PanierFormModel()
+            {
+
+                Nom = entity.Nom,
+                Prix = entity.Prix,
+                Description = entity.Description,
+                Quantite = 1,
+
+            };
+
+
+        }
+
+
+
+        
+
 
 
     }

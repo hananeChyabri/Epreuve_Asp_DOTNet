@@ -1,0 +1,50 @@
+﻿@using Produit_Ecologique.Handlers;
+@model IEnumerable<Produit_Ecologique.Models.PanierFormModel>
+@inject PanierSessionManager _sessionManager
+
+@{
+    ViewData["Title"] = "Votre Panier";
+}
+
+<h1>Index</h1>
+
+<h4>PanierFormModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Index" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            @foreach (var produit in Model)
+            {
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h4 class="card-title">@produit.Nom</h4>
+                        <p class="card-text">@produit.Description</p>
+                        <p class="card-text">Prix: @produit.Prix</p>
+                        <p class="card-text">Quantite: @produit.Quantite</p>
+                    </div>
+                </div>
+            }
+
+            <div class="card mb-3">
+                <div class="card-body">
+                    <p class="card-text">Total : @_sessionManager.GetTotal()</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Confirm</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div>
+    <a asp-action="Index" asp-asp-controller="Produit">Continue shopping..</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

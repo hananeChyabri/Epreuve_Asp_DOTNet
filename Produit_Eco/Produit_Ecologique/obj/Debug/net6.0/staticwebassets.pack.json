@@ -5,6 +5,22 @@
       "PackagePath": "staticwebassets\\Produit_Ecologique.bundle.scp.css"
     },
     {
+      "Id": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\assets\\imgs\\arrosoir.jpg",
+      "PackagePath": "staticwebassets\\assets\\imgs\\arrosoir.jpg"
+    },
+    {
+      "Id": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\assets\\imgs\\chemise.jpg",
+      "PackagePath": "staticwebassets\\assets\\imgs\\chemise.jpg"
+    },
+    {
+      "Id": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\assets\\imgs\\chemise1.jpg",
+      "PackagePath": "staticwebassets\\assets\\imgs\\chemise1.jpg"
+    },
+    {
+      "Id": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\assets\\imgs\\chemise2.jpg",
+      "PackagePath": "staticwebassets\\assets\\imgs\\chemise2.jpg"
+    },
+    {
       "Id": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\assets\\imgs\\miel.jpg",
       "PackagePath": "staticwebassets\\assets\\imgs\\miel.jpg"
     },
@@ -17,8 +33,24 @@
       "PackagePath": "staticwebassets\\assets\\imgs\\panier.jpg"
     },
     {
+      "Id": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\assets\\imgs\\phone1.jpg",
+      "PackagePath": "staticwebassets\\assets\\imgs\\phone1.jpg"
+    },
+    {
+      "Id": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\assets\\imgs\\phone2.jpg",
+      "PackagePath": "staticwebassets\\assets\\imgs\\phone2.jpg"
+    },
+    {
+      "Id": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\assets\\imgs\\phone3.jpg",
+      "PackagePath": "staticwebassets\\assets\\imgs\\phone3.jpg"
+    },
+    {
       "Id": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\assets\\imgs\\tapis1.jpg",
       "PackagePath": "staticwebassets\\assets\\imgs\\tapis1.jpg"
+    },
+    {
+      "Id": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\assets\\imgs\\telefon.jpg",
+      "PackagePath": "staticwebassets\\assets\\imgs\\telefon.jpg"
     },
     {
       "Id": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\css\\site.css",

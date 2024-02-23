@@ -59,9 +59,12 @@ INSERT INTO [Produit] ([Nom], [Description], [Prix], [Nombre_vente], [EcoScore],
 VALUES ('Tapis de yoga', 'Tapis de yoga en caoutchouc naturel', 29.99, 40, 'B', 'Sports et Loisirs');
 
 
-INSERT INTO Media (url_image, Id_Produit) VALUES ('miel.jpg', 1);
-INSERT INTO Media (url_image, Id_Produit) VALUES ('miel.jpg', 1);
-INSERT INTO Media (url_image, Id_Produit) VALUES ('miel.jpg', 2);
-INSERT INTO Media (url_image, Id_Produit) VALUES ('miel.jpg', 2);
-INSERT INTO Media (url_image, Id_Produit) VALUES ('miel.jpg', 3);
-INSERT INTO Media (url_image, Id_Produit) VALUES ('miel.jpg', 3);
+INSERT INTO Media (url_image, Id_Produit) VALUES ('phone1.jpg', 1);
+INSERT INTO Media (url_image, Id_Produit) VALUES ('phone2.jpg', 1);
+INSERT INTO Media (url_image, Id_Produit) VALUES ('phone3.jpg', 1);
+INSERT INTO Media (url_image, Id_Produit) VALUES ('chemise.jpg', 2);
+INSERT INTO Media (url_image, Id_Produit) VALUES ('chemise2.jpg', 2);
+INSERT INTO Media (url_image, Id_Produit) VALUES ('chemise3.jpg', 2);
+INSERT INTO Media (url_image, Id_Produit) VALUES ('arrosoir.jpg', 3);
+INSERT INTO Media (url_image, Id_Produit) VALUES ('miel.jpg', 4);
+INSERT INTO Media (url_image, Id_Produit) VALUES ('tapis1.jpg', 5);

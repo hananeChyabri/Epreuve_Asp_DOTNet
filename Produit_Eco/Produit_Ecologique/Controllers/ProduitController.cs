@@ -32,18 +32,34 @@ namespace Produit_Ecologique.Controllers
 
         /*j'utilise l action getAllProduct pour afficher aussi le resulat du recherche*/
         // GET: ProduitController
-        public ActionResult GetAllProduct(string? search)
+        public ActionResult GetAllProduct(string? search,EcoScore? score)
         {
             IEnumerable<ProduitListItemViewModels> model = null;
-            if (string.IsNullOrWhiteSpace(search))
+            if (string.IsNullOrWhiteSpace(search) && !score.HasValue)
             {
             model = _produitRepository.Get().Select(d => d.ToListItem());
+            }
+
+            else if (!string.IsNullOrWhiteSpace(search) && score.HasValue)
+            {
+                model = _produitRepository.Get().Where(d => d.Nom.Contains(search) &&
+                d.EcoScore == score).Select(d => d.ToListItem());
                 return View(model);
             }
-            else
-                model = _produitRepository.Get().Where(d => d.Nom == search).Select(d => d.ToListItem());
 
+            else if(!string.IsNullOrWhiteSpace(search))
+            {
+                model = _produitRepository.Get().Where(d => d.Nom == search).Select(d => d.ToListItem());
+                return View(model);
+            }
+               
+            else if (score.HasValue)
+            {
+                model = _produitRepository.Get().Where(d => d.EcoScore == score).Select(d => d.ToListItem());
+                return View(model);
+            }
             return View(model);
+
 
 
         }

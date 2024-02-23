@@ -4,17 +4,17 @@
     <form asp-action="GetAllProduct" method="get">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="form-group">
                     <input name="search" class="form-control custom-input" placeholder="Recherche par nom..." />
                 </div>
             </div>
-            <div class="col-md-4">
-                <select  class="form-control">
+            <div class="col-md-3">
+                <select name="score" class="form-control">
                     <option value="">Veuillez choisir un score</option>
                     @foreach (var score in Enum.GetValues(typeof(EcoScore)))
                     {
-                        <option name="search" value="@score">@score</option>
+                        <option  value="@score">@score</option>
                     }
                 </select>
             

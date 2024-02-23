@@ -50,7 +50,7 @@ namespace Produit_Ecologique.Controllers
                 await form.Image.SaveFile();
                 _mediaRepository.Insert(new Media(0, form.Image.FileName, id_produit));
 
-                return RedirectToAction(nameof(Details), new { id_produit });
+                return RedirectToAction(nameof(Details),nameof(Produit) ,new { id=id_produit });
             }
             catch
             {

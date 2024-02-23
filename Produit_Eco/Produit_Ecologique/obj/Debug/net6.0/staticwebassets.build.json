@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DKlXB/soWvLK2gDgLXX/rQ2VpeuwoeAUFsztyFSkonE=",
+  "Hash": "p7lpeV2Luv636PBrz+nZp48VBG6WVXMipFCz13DF7qU=",
   "Source": "Produit_Ecologique",
   "BasePath": "_content/Produit_Ecologique",
   "Mode": "Default",
@@ -117,6 +117,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\imgs\\chemise2.jpg"
+    },
+    {
+      "Identity": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\assets\\imgs\\jurassicpark.png",
+      "SourceId": "Produit_Ecologique",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\",
+      "BasePath": "_content/Produit_Ecologique",
+      "RelativePath": "assets/imgs/jurassicpark.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\imgs\\jurassicpark.png"
     },
     {
       "Identity": "C:\\REPOSITORIES\\Epreuve_Asp_DOTNet\\Produit_Eco\\Produit_Ecologique\\wwwroot\\assets\\imgs\\matrix.png",

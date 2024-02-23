@@ -15,7 +15,7 @@ namespace Produit_Ecologique.Models
         public string Description { get; set; }
         [DisplayName("Prix")]
         public decimal prix { get; set; }
-        [DisplayName("Vendu : ")]
+        [DisplayName("Vendu")]
         public int Nombre_Vente { get; set; }
 
         public EcoScore EcoScore { get; set; }
